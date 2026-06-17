@@ -110,6 +110,13 @@ img{max-width:100%}
 .o-links a{font-family:var(--mono);font-size:13px;padding:13px 22px;border-radius:100px;border:1px solid rgba(243,238,228,.2);transition:background .25s,border-color .25s,transform .25s}
 .o-links a:hover{background:rgba(243,238,228,.07);border-color:rgba(243,238,228,.5);transform:translateY(-2px)}
 .foot{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;border-top:1px solid rgba(243,238,228,.12);padding-top:22px;font-family:var(--mono);font-size:11px;letter-spacing:.04em;color:var(--bone-dim)}
+.foot a{color:var(--bone-dim);transition:color .2s}.foot a:hover{color:var(--bone)}
+.impr{background:var(--ink-2);padding:clamp(70px,12vh,120px) clamp(22px,6vw,80px)}
+.impr-in{max-width:720px;margin:0 auto}
+.impr-label{font-family:var(--mono);font-size:12px;letter-spacing:.26em;text-transform:uppercase;color:var(--bone-dim);margin:0 0 48px;border-top:1px solid rgba(243,238,228,.14);padding-top:26px}
+.impr h2{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--bone-dim);margin:40px 0 10px}
+.impr p,.impr address{font-size:15px;line-height:1.75;color:rgba(243,238,228,.75);margin:0 0 6px;font-style:normal}
+.impr a{color:var(--bone);border-bottom:1px solid rgba(243,238,228,.3);transition:border-color .2s}.impr a:hover{border-color:var(--bone)}
 
 [data-reveal]{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
 [data-reveal].in{opacity:1;transform:none}
@@ -461,6 +468,50 @@ img{max-width:100%}
       </div>
     </section></main>
 
+<section class="impr" id="impressum" aria-labelledby="impr-h">
+  <div class="impr-in">
+    <p class="impr-label" id="impr-h">Impressum</p>
+    <p>Angaben gemäß § 5 TMG</p>
+
+    <h2>Unternehmen</h2>
+    <address>
+      Print3D by Peter Schneider<br>
+      Peter Schneider (Inhaber)<br>
+      Wettinstraße 52<br>
+      01640 Coswig
+    </address>
+
+    <h2>Kontakt</h2>
+    <p>
+      Telefon: <a href="tel:+491777562545">+49 177 7562545</a><br>
+      E-Mail: <a href="mailto:info@print3d-now.com">info@print3d-now.com</a><br>
+      Internet: <a href="https://www.print3d-now.com" target="_blank" rel="noopener">www.print3d-now.com</a>
+    </p>
+
+    <h2>Umsatzsteuer-ID</h2>
+    <p>Gemäß § 19 UStG wird keine Umsatzsteuer berechnet (Kleinunternehmerregelung).</p>
+
+    <h2>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</h2>
+    <address>
+      Peter Schneider<br>
+      Wettinstraße 52<br>
+      01640 Coswig<br>
+      Deutschland
+    </address>
+
+    <h2>Haftungsausschluss</h2>
+    <p>Die auf dieser Webseite bereitgestellten Informationen wurden sorgfältig geprüft. Dennoch kann keine Gewähr für die Vollständigkeit, Richtigkeit und Aktualität der Inhalte übernommen werden.</p>
+
+    <h2>Urheberrecht</h2>
+    <p>Die auf dieser Webseite veröffentlichten Inhalte und Werke unterliegen dem deutschen Urheberrecht. Eine Vervielfältigung oder Verwendung von Texten, Bildern oder anderen Inhalten in anderen elektronischen oder gedruckten Publikationen ist ohne ausdrückliche Zustimmung des Urhebers nicht gestattet.</p>
+
+    <h2>Online-Streitbeilegung</h2>
+    <p>Plattform der EU-Kommission zur Online-Streitbeilegung:<br>
+    <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener">https://ec.europa.eu/consumers/odr</a></p>
+    <p>Der Verkäufer ist weder verpflichtet noch bereit, an einem Streitbeilegungsverfahren vor einer alternativen Streitbeilegungsstelle teilzunehmen.</p>
+  </div>
+</section>
+
 <footer class="outro" id="kontakt">
   <div class="outro-in">
     <p class="o-eyebrow">Im Bau &middot; mehr folgt</p>
@@ -472,6 +523,7 @@ img{max-width:100%}
     <div class="foot">
       <span>&copy; 2026 Peter Schneider</span>
       <span>14 Projekte &middot; gestaltet &amp; entwickelt</span>
+      <a href="#impressum">Impressum</a>
     </div>
   </div>
 </footer>
@@ -494,7 +546,7 @@ img{max-width:100%}
     prog.style.background='#b07a1e';root.style.setProperty('--rail','#b07a1e');
     railLinks.forEach(function(a){a.classList.remove('active');});
   }});},{threshold:.5});
-  ['#top','#kontakt'].forEach(function(id){var el=document.querySelector(id);if(el)dk.observe(el);});
+  ['#top','#kontakt','#impressum'].forEach(function(id){var el=document.querySelector(id);if(el)dk.observe(el);});
   var rev=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');rev.unobserve(e.target);}});},{threshold:.16,rootMargin:'0px 0px -8% 0px'});
   document.querySelectorAll('[data-reveal]').forEach(function(el){rev.observe(el);});
 })();
